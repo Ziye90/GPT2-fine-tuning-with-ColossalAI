@@ -23,8 +23,13 @@ drive.mount('/content/drive')
 ```
 pip install -r requirements.txt
 ```
-
-
+* train with torch DDP with fp32
+```
+!colossalai run --nproc_per_node 1 train.py -c ./ckpt-fp32 # train with torch DDP with fp32
+```
  The makeenv.ipynb file shows the details of how to set up the enviroment, train, evaluate and run the codeon google Colab
 
 # Experiment results
+| Model     | Booster DDP with FP32 | Booster DDP with FP16 | 
+| --------- |-----------------------|-----------------------|
+| ResNet-18 | 41.00 %               | 45.53 %               | 
